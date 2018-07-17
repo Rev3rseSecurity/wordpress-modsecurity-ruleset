@@ -64,10 +64,13 @@ When `wprs_check_bruteforce` is set to `1` WPRS will try to mitigate brute-force
 By default it will check if a user performs more then 5 login attempts, in a time span of 2 minutes,
 and blocks it for 5 minutes.
 
-```setvar:tx.wprs_check_bruteforce=1  =  brute-force mitigation enabled
-setvar:tx.wprs_check_bruteforce=0  =  brute-force mitigation disabled```
+```
+setvar:tx.wprs_check_bruteforce=1  =  brute-force mitigation enabled
+setvar:tx.wprs_check_bruteforce=0  =  brute-force mitigation disabled
+```
 
 default: 1
+
 ```perl
 SecAction "id:22000004,phase:1,nolog,pass,t:none,setvar:tx.wprs_check_bruteforce=1"
 ```
@@ -78,7 +81,9 @@ How many seconds the login counter will be incremented
 on each login attempt on /wp-login.php. For example, if you
 want to increment the login attempt counter for a 10 minutes span:
 
-```setvar:tx.wprs_bruteforce_timespan=600```
+```
+setvar:tx.wprs_bruteforce_timespan=600
+```
 
 default: 120 (2 minutes)
 
@@ -91,7 +96,9 @@ SecAction "id:22000005,phase:1,nolog,pass,t:none,setvar:tx.wprs_bruteforce_times
 This rule set how many login attempts (inside the time span period) WPRS will accepts before ban.
 For example, if you set this to 10, WPRS will ban the user at the 11th attempt.
 
-```setvar:tx.wprs_bruteforce_threshold=10```
+```
+setvar:tx.wprs_bruteforce_threshold=10
+```
 
 default: 5
 
@@ -104,7 +111,9 @@ SecAction "id:22000010,phase:1,nolog,pass,t:none,setvar:tx.wprs_bruteforce_thres
 This rule set for how long a user will be banned if a brute-force attempt is detected.
 For example, if you want to block a user for 5 mins you'll set this to 300:
 
-```setvar:tx.wprs_bruteforce_banperiod=300```
+```
+setvar:tx.wprs_bruteforce_banperiod=300
+```
 
 default: 300
 
