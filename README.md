@@ -118,8 +118,10 @@ This rule enable or disable requests like "/?author=1".
 An attacker could enumerate all active users by incrementing
 the author parameter.
 
-```setvar:tx.wprs_allow_user_enumeration=1 = allows request like /?author=1
-setvar:tx.wprs_allow_user_enumeration=0 = blocks request like /?author=1```
+```
+setvar:tx.wprs_allow_user_enumeration=1 = allows request like /?author=1
+setvar:tx.wprs_allow_user_enumeration=0 = blocks request like /?author=1
+```
 
 default: 1
 
@@ -133,8 +135,10 @@ This rule enable or disable access on xmlrpc.php script.
 Usually many users doesn't use the xmlrpc.php but they leave it
 active, and this could lead to a brute-force amplification attacks.
 
-```setvar:tx.wprs_allow_xmlrpc=1 = allows reuests to xmlrpc.php
-setvar:tx.wprs_allow_xmlrpc=0 = blocks reuests to xmlrpc.php```
+```
+setvar:tx.wprs_allow_xmlrpc=1 = allows reuests to xmlrpc.php
+setvar:tx.wprs_allow_xmlrpc=0 = blocks reuests to xmlrpc.php
+```
 
 default: 1
 
@@ -147,8 +151,10 @@ SecAction "id:22000025,phase:1,nolog,pass,t:none,setvar:tx.wprs_allow_xmlrpc=1"
 This rule enable or disable the logging of authentication events.
 If you enable this, each time a user login on /wp-login.php a log is produced.
 
-```setvar:tx.wprs_log_authentications=1 = enables logging
-setvar:tx.wprs_log_authentications=0 = disables logging```
+```
+setvar:tx.wprs_log_authentications=1 = enables logging
+setvar:tx.wprs_log_authentications=0 = disables logging
+```
 
 default: 1
 
