@@ -1,0 +1,20 @@
+sudo: required
+services:
+- docker
+language: python
+python:
+  - 2.7
+before_install:
+  - |
+    if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+      cd test/ && docker build --build-arg COMMIT=$TRAVIS_PULL_REQUEST_SHA -f Dockerfile . -t wprs/modsecurity
+    else
+      cd test/ && docker build --build-arg COMMIT=master -f Dockerfile . -t wprs/modsecurity
+    fi
+  - docker run -d --name wprs -p 80:80 wprs/modsecurity:latest
+script:
+  - TEST=$(curl -sI 'http://localhost/' | head -1 | egrep '200 OK' | wc -l) && if [ $TEST -eq 1 ]; then echo "OK - TEST /"; else exit 1; fi
+  - TEST=$(curl -sI 'http://localhost/?author=1' | head -1 | egrep '403 Forbidden' | wc -l) && if [ $TEST -eq 1 ]; then echo "OK - TEST User Enumeration"; else exit 1; fi
+  - docker stop wprs
+  - docker rm -f wprs 
+
