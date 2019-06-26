@@ -1,4 +1,4 @@
-# WordPress ModSecurity Rule Set (WPRS)
+# WordPress ModSecurity Rule Set (WPModSec)
 This ruleset extends the OWASP CRS (https://github.com/SpiderLabs/owasp-modsecurity-crs) and includes specific rules in order to protect the most critical aspects of the famous WordPress CMS.
 
 ## Table of contents
