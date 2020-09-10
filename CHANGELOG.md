@@ -18,6 +18,7 @@
 - 222 00039: fixed Regex
 - 222 00040: fixed regex, removed wrong tag, fixed message
 - Fix IP not removed from Ban if ban period expired (cherry-pick PR #7 by @bazalt)
+- Fix ip.wprs_login_attempt not incremented on failed login
 
 #### New functionality
 - Configurable wp-login.php regex path
