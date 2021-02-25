@@ -183,6 +183,6 @@ Please, feel free to contribute by a Pull Request
 
 
 ## Contacts
-theMiddle twitter account: [@Menin_theMiddle](https://twitter.com/Menin_TheMiddle)<br>
+theMiddle twitter account: [@AndreaTheMiddle](https://twitter.com/AndreaTheMiddle)<br>
 Rev3rse Security twitter account (ITA): [@rev3rsesecurity](https://twitter.com/rev3rsesecurity)<br>
 Rev3rse Security YouTube (ITA): https://www.youtube.com/rev3rsesecurity
